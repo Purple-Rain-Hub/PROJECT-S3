@@ -520,5 +520,20 @@ tree(10);
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+console.log("---ESERCIZIO 29---");
+function isItPrime(nmr) {
+  let primeNum = true;
+  if (nmr === 1 || nmr < 1)
+    console.log("metti un numero positivo maggiore di 1 :(");
+  else {
+    for (i = 2; i <= nmr / 2; i++) {
+      if (nmr % i == 0) {
+        primeNum = false;
+        break;
+      }
+    }
+  }
+  return primeNum;
+}
+console.log(isItPrime(101));
 
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
