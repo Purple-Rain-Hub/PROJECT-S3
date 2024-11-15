@@ -12,14 +12,14 @@ REGOLE
 /* ESERCIZIO A
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
-const sum = 10+20;
-console.log(sum);
+const sum = 10 + 20;
+//console.log(sum);
 
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 const random = Math.floor(Math.random() * 21);
-console.log(random);
+//console.log(random);
 
 
 /* ESERCIZIO C
@@ -34,7 +34,7 @@ const me = {
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
 delete me.age;
-console.log(me);
+//console.log(me);
 
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
@@ -44,45 +44,81 @@ me.skills = ["c++", "c#", "phyton", "JavaScript"];
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 me.skills.push("samba");
-console.log(me);
+//console.log(me);
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
 me.skills.pop();
-console.log(me);
+//console.log(me);
 
 // Funzioni
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+function dice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+//console.log(dice());
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+function whoIsBigger(num1, num2) {
+  if (num1 > num2)
+    return num1;
+  else if (num1 < num2)
+    return num2;
+  else
+    return "nonono sono uguali quei due";
+}
+console.log(whoIsBigger(5, 5));
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+function splitMe(dimmi) {
+  return dimmi.split(" ");
+}
+console.log(splitMe("ciao mi chiamo Rocco"));
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+function deleteOne(str, bool) {
+  if(bool == true)
+    return str.slice(1)
+  else
+    return str.slice(0, -1);
+}
+console.log(deleteOne("paolo", false));
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(str) {
+  let parole = str.split(" ");
+  let pollo = [];
+  for(i=0; i<parole.length; i++){ 
+   pollo.push(parole[i].split("").filter(e => isNaN(e)).join(""));
+  }
+  return pollo.join(" ");
+}
+console.log(onlyLetters("ciao m1i chia423423mo asdrub1al2e"));
+//volevo fare in modo che togliesse i numeri anche quando in mezzo a parole
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-
+function isThisAnEmail(str) {
+  
+}
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
