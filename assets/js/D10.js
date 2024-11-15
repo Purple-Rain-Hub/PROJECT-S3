@@ -536,4 +536,3 @@ function isItPrime(nmr) {
   return primeNum;
 }
 console.log(isItPrime(101));
-
